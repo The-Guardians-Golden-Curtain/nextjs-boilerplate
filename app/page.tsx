@@ -1,103 +1,95 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="gc-wrap">
+      <header className="gc-header">
+        <div className="gc-badge">The Guardians</div>
+        <nav className="gc-nav">
+          <Link href="#mission">Mission</Link>
+          <Link href="#how">How it Works</Link>
+          <Link href="#join" className="gc-cta">Get Updates</Link>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="gc-hero">
+        <div className="gc-mark">
+          {/* Halo-shield “G” — simple SVG stub you can replace later with the final logo */}
+          <svg width="88" height="88" viewBox="0 0 88 88" aria-hidden>
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stopColor="var(--gc-gold)"/>
+                <stop offset="1" stopColor="var(--gc-amber)"/>
+              </linearGradient>
+            </defs>
+            <circle cx="44" cy="44" r="40" fill="none" stroke="url(#g)" strokeWidth="4"/>
+            <path d="M27 44c0-10 7-17 17-17 8 0 14 4 17 10H50c-5 0-9 4-9 9 0 6 4 9 10 9h10c-3 6-9 10-17 10-10 0-17-7-17-17z" fill="url(#g)"/>
+          </svg>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+
+        <h1>
+          The Golden Curtain
+          <span>Guarding hope. Empowering change.</span>
+        </h1>
+        <p className="gc-sub">
+          A donation-first platform where everyday people become Guardians for one another.
+          Simple pages. Transparent flows. Real help.
+        </p>
+
+        <div className="gc-actions">
+          <Link href="#join" className="gc-btn gc-btn-primary">Get Early Access</Link>
+          <Link href="#how" className="gc-btn gc-btn-ghost">How it Works</Link>
+        </div>
+
+        <div className="gc-ui-glow" aria-hidden />
+      </section>
+
+      <section id="mission" className="gc-section">
+        <h2>Why the “Curtain”?</h2>
+        <p>
+          It’s a promise of shelter and dignity. Our angel-wing motif stands for protection, while
+          a subtle fabric pattern nods to community and country. The mission is human: reduce stress,
+          increase trust, and give people something real to look forward to.
+        </p>
+      </section>
+
+      <section id="how" className="gc-section gc-grid">
+        <div>
+          <h3>1) Guardians Onboard</h3>
+          <p>Verified recipients connect a secure payout account (Stripe Express).</p>
+        </div>
+        <div>
+          <h3>2) People Donate</h3>
+          <p>Supporters give directly on clean, shareable pages—mobile-first and transparent.</p>
+        </div>
+        <div>
+          <h3>3) Funds Flow</h3>
+          <p>Destination transfers route donations quickly and safely. Receipts are automatic.</p>
+        </div>
+      </section>
+
+      <section id="join" className="gc-section gc-card">
+        <h2>Be first to know</h2>
+        <p>Launch updates, early invites, and a look behind the curtain.</p>
+        {/* Replace this placeholder with your Resend/Clerk form later */}
+        <form
+          className="gc-form"
+          onSubmit={(e) => { e.preventDefault(); alert("You’re on the list!"); }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+          <input type="email" placeholder="you@email.com" required />
+          <button className="gc-btn gc-btn-primary" type="submit">Notify Me</button>
+        </form>
+        <small className="gc-note">We respect privacy. No spam—ever.</small>
+      </section>
+
+      <footer className="gc-footer">
+        <span>© {new Date().getFullYear()} The Golden Curtain LLC</span>
+        <span className="gc-dot">•</span>
+        <Link href="/terms">Terms</Link>
+        <span className="gc-dot">•</span>
+        <Link href="/privacy">Privacy</Link>
       </footer>
-    </div>
+    </main>
   );
 }
