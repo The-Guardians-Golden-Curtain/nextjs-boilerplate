@@ -95,3 +95,46 @@ a:hover{opacity:.9}
   opacity:.8; padding:48px 0 24px; font-size:14px;
 }
 .gc-dot{opacity:.5}
+/* Quote bar with gold cent “quotes” */
+.gc-quote{
+  margin:18px auto 0;
+  display:inline-flex; gap:10px; align-items:center;
+  padding:8px 14px; border-radius:999px;
+  border:1px solid rgba(246,195,68,.35);
+  background:linear-gradient(180deg, rgba(246,195,68,.10), rgba(246,195,68,.04));
+  font-style:italic; letter-spacing:.2px;
+}
+.gc-cent{
+  font-style:normal; font-weight:800; line-height:1;
+  background:linear-gradient(90deg,var(--gc-gold),var(--gc-amber));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter: drop-shadow(0 0 6px rgba(246,195,68,.35));
+}
+
+/* Plans */
+.gc-plans h2{ text-align:center; margin-bottom:14px; }
+.gc-plan-grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+}
+.gc-plan{
+  border:1px solid rgba(255,255,255,.08);
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-radius:16px; padding:18px; text-align:left; position:relative;
+}
+.gc-plan h3{ margin:4px 0 6px; font-family:var(--font-display); }
+.gc-plan-line{ opacity:.8; margin:0 0 10px; }
+.gc-plan ul{ margin:0 0 14px 16px; opacity:.9; }
+.gc-plan-featured{
+  border-color: rgba(246,195,68,.55);
+  box-shadow: 0 0 0 1px rgba(246,195,68,.25), 0 10px 30px rgba(246,195,68,.08);
+  background: radial-gradient(300px 120px at 50% -20%, rgba(246,195,68,.12), transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+}
+.gc-chip{
+  position:absolute; top:10px; right:10px;
+  font-size:11px; letter-spacing:.3px;
+  padding:4px 8px; border-radius:999px;
+  background:linear-gradient(90deg,var(--gc-gold),var(--gc-amber));
+  color:#1E1F25; font-weight:800;
+}
