@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import NotifyForm from "@/components/NotifyForm";
+import NotifyForm from "./components/NotifyForm";
 
 export default function Home() {
   return (
