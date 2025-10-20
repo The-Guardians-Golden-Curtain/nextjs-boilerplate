@@ -138,3 +138,18 @@ a:hover{opacity:.9}
   background:linear-gradient(90deg,var(--gc-gold),var(--gc-amber));
   color:#1E1F25; font-weight:800;
 }
+.gc-header {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 20px;
+}
+.gc-logo { display:flex; align-items:center; gap:12px; }
+.gc-logo img { filter: drop-shadow(0 0 10px rgba(246,195,68,.5)); transition: all .3s ease; }
+.gc-logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 16px rgba(255,230,120,.8)); }
+.gc-brand {
+  font-family: var(--font-mont); font-weight:700; font-size:1.25rem;
+  background: linear-gradient(90deg, var(--gc-gold), var(--gc-amber));
+  -webkit-background-clip:text; color:transparent;
+}
+.gc-nav { display:flex; gap:18px; align-items:center; }
+.gc-nav a { color:#eaeaea; text-decoration:none; opacity:.9; }
+.gc-nav a:hover { opacity:1; }
