@@ -14,6 +14,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <header className="gc-header">
+  <div className="gc-logo">
+    <img
+      src="/tgc-emblem.png"
+      alt="The Golden Curtain Emblem"
+      width={100}
+      height={140}
+      style={{ objectFit: "contain" }}
+    />
+    <span className="gc-brand">The Golden Curtain</span>
+  </div>
+  <nav className="gc-nav">
+    <a href="/how-it-works">How it Works</a>
+    <a href="#plans">Plans</a>
+    <a href="/guardians/sample-guardian">Guardians</a>
+  </nav>
+</header>
     <html lang="en" className={`${inter.variable} ${mont.variable}`}>
       <body>{children}</body>
     </html>
