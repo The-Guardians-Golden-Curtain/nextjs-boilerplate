@@ -19,5 +19,25 @@
     "@types/react-dom": "^19",
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4"
-  }
+  },
+,
+"scripts": {
+  "fix:typo": "node scripts/fix-typography.mjs",
+  "format": "prettier --write .",
+  "lint": "eslint --fix \"app/**/*.{ts,tsx}\""
+},
+"lint-staged": {
+  "*.{ts,tsx,js,jsx,css,scss,md,html,json,yml,yaml}": [
+    "node scripts/fix-typography.mjs",
+    "prettier --write"
+  ]
+},
+"devDependencies": {
+  "globby": "^14.0.0",
+  "prettier": "^3.2.5",
+  "eslint": "^8.57.0",
+  "@typescript-eslint/parser": "^7.4.0",
+  "@typescript-eslint/eslint-plugin": "^7.4.0",
+  "husky": "^9.0.0",
+  "lint-staged": "^15.2.0"
 }
